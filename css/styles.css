@@ -24,7 +24,7 @@
 body {
   padding-top: 80px;
 
-  background-color: FFFFFF;
+  background-color: var(--white-text-color);
   color: var(--primery-text-color);
   font-family: Roboto, sans-serif;
   font-size: 14px;
@@ -32,7 +32,7 @@ body {
   letter-spacing: 0.03em;
 }
 .logo {
-  color: #2196f3;
+  color:var(--acсent-text-color);
   font-family: Raleway, arial;
   font-size: 26px;
   line-height: 1.19;
@@ -94,11 +94,6 @@ img {
   color: var(--title-text-color);
 }
 
-/* ------section color------- */
-/* .page-header{background-color: yellow;}
-.hero{background-color: coral;}
-.feature-list{background-color: darkgoldenrod;}
-.work-list{background-color: darkorchid;} */
 
 /* ----------------------header -----------------------*/
 .page-header {
@@ -106,7 +101,9 @@ img {
   width: 100%;
   top: 0;
   left: 0;
+  background-color: var(--white-text-color);
   border-bottom: 1px solid #ececec;
+  z-index: 1;
 }
 
 .header-container {
@@ -609,7 +606,7 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
   color: var(--white-text-color);
   opacity: 0;   /* прячем оверлей - он прозрачный */
 }
-.examples-link:hover .overlay-text
+.examples-link:hover .overlay-text,
 .examples-link:focus .overlay-text{
   opacity: 1;
 }
