@@ -22,6 +22,8 @@
 }
 
 body {
+  padding-top: 80px;
+
   background-color: FFFFFF;
   color: var(--primery-text-color);
   font-family: Roboto, sans-serif;
@@ -100,6 +102,10 @@ img {
 
 /* ----------------------header -----------------------*/
 .page-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
   border-bottom: 1px solid #ececec;
 }
 
@@ -123,27 +129,14 @@ img {
 .icon-header {
   fill: currentColor;
 }
-/* если цвет иконки  currentColor, как у родятеля (как у ссылки), то цвет при ховере тоже наследуется*/
+/* если цвет иконки  currentColor, как у родителя (как у ссылки), то цвет при ховере тоже наследуется*/
 .contact-nav .link:hover,
 .contact-nav .link:focus {
   color: var(--acсent-text-color);
+  transition: cubic-bezier(0.4, 0, 0.2, 1); 
+  /* Для всех эффектов ховера и фокуса (цвет, фон, тень) сделаны переходы. Время - 250ms */
 }
-/* .icon-envelope::before{
-  content: '';
-  height: 12px;
-  width: 16px;
-  margin-right: 10px;
-  background-image: url(../images/envelope.svg);  
-}
-.icon-phone::before{
-  content: '';
-  height: 12px;
-  margin-right: 10px;
-  background-image: url(../images/smartphone.svg);  
-  width: 10px;
-  background-size: contain;
-  background-repeat: no-repeat;
- } */
+
 
 .site-nav .item:not(:last-child) {
   margin-right: 50px;
@@ -191,6 +184,22 @@ header svg {
 .icon-item-header .link {
   display: flex;
   align-items: center;
+}
+
+/* подчеркивание текущей страницы */
+.link.current{
+  position: relative;
+}
+.link.current::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-background-color);
+  border-radius: 2px;
 }
 
 /* hero */
@@ -293,7 +302,7 @@ header svg {
   text-transform: uppercase;
 }
 
-/* Examples */
+/* ---------------------Work  Examples-------------------- */
 .work-section {
   padding-top: 0;
 }
@@ -302,10 +311,33 @@ header svg {
   /* justify-content: space-between; */
 }
 .work-item {
+  position: relative;
   margin-right: 30px;
 }
 .work-item:last-child {
   margin-right: 0;
+}
+.work-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+}
+/* или вариант центрирования
+top: 50%;  - это % от РОДИТЕЛЯ
+left: 50%;  - это % от РОДИТЕЛЯ
+transform: translate (-50%, -50%) – это % СВОЕЙ ширины (ширины РЕБЕНКА)  */
+
+.work-box>p{
+  color: var(--white-text-color);
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
 }
 
 /* -----------------------------------------team ------------------*/
@@ -544,6 +576,44 @@ header svg {
   border-left: 1px solid var(--border-color);
   padding: 20px 24px;
 }
+.overlay-box{
+  position: relative;
+}
+.overlay-box::before{
+  position: absolute;
+  display: inline-block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;   /* прячем оверлей - он прозрачный */
+}
+.examples-link:hover .overlay-box::before,
+.examples-link:focus .overlay-box::before{
+  opacity: 1;
+}
+/* при ховере на ссылку - возми overlay-box::before и сделай его непрозрачным */
+
+.overlay-text{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 63px 24px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--white-text-color);
+  opacity: 0;   /* прячем оверлей - он прозрачный */
+}
+.examples-link:hover .overlay-text
+.examples-link:focus .overlay-text{
+  opacity: 1;
+}
+/* при ховере на ссылку - возми overlay-text и сделай его непрозрачным */
 
 /* button */
 .button {
