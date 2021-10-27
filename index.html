@@ -61,7 +61,7 @@
           <h1 class="hero-title">
             Эффективные решения <br />для вашего бизнеса
           </h1>
-          <button type="button" class="button primary">Заказать услугу</button>
+          <button type="button" class="button primary" data-modal-open>Заказать услугу</button>
         </div>
       </section>
 
@@ -136,7 +136,6 @@
               <div class="work-box">
                 <p>десктопные приложения</p>
               </div>
-              
             </li>
             <li class="work-item">
               <img
@@ -348,35 +347,35 @@
               </a>
             </li>
             <li class="client-item">
-              <a href="/"  class="client-link">
+              <a href="/" class="client-link">
                 <svg class="client-icon">
                   <use href="./images/sprite.svg#icon-logo2"></use>
                 </svg>
               </a>
             </li>
             <li class="client-item">
-              <a href="/"  class="client-link">
+              <a href="/" class="client-link">
                 <svg class="client-icon">
                   <use href="./images/sprite.svg#icon-logo3"></use>
                 </svg>
               </a>
             </li>
             <li class="client-item">
-              <a href="/"  class="client-link">
+              <a href="/" class="client-link">
                 <svg class="client-icon">
                   <use href="./images/sprite.svg#icon-logo4"></use>
                 </svg>
               </a>
             </li>
             <li class="client-item">
-              <a href="/"  class="client-link">
+              <a href="/" class="client-link">
                 <svg class="client-icon">
                   <use href="./images/sprite.svg#icon-logo5"></use>
                 </svg>
               </a>
             </li>
             <li class="client-item">
-              <a href="/"  class="client-link">
+              <a href="/" class="client-link">
                 <svg class="client-icon">
                   <use href="./images/sprite.svg#icon-logo6"></use>
                 </svg>
@@ -386,6 +385,20 @@
         </div>
       </section>
     </main>
+
+    <!-- Модальное окно -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal-box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
+          similique.
+        </p>
+        <button class="button modal-btn" data-modal-close>
+          <svg class="modal-icon">
+            <use href="./images/sprite.svg#icon-close-black-18dp-2-1"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
 
     <!-- подвал -->
     <footer class="page-footer">
@@ -450,5 +463,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
