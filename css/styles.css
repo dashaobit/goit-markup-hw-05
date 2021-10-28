@@ -127,13 +127,6 @@ img {
   fill: currentColor;
 }
 /* если цвет иконки  currentColor, как у родителя (как у ссылки), то цвет при ховере тоже наследуется*/
-.contact-nav .link:hover,
-.contact-nav .link:focus {
-  color: var(--acсent-text-color);
-  transition: cubic-bezier(0.4, 0, 0.2, 1); 
-  /* Для всех эффектов ховера и фокуса (цвет, фон, тень) сделаны переходы. Время - 250ms */
-}
-
 
 .site-nav .item:not(:last-child) {
   margin-right: 50px;
@@ -155,6 +148,8 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link.current {
   color: var(--acсent-text-color);
@@ -169,8 +164,17 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-}
 
+  /* transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);  */
+  /* Для всех эффектов ховера и фокуса (цвет, фон, тень) сделаны переходы. Время - 250ms */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contact-nav .link:hover,
+.contact-nav .link:focus {
+  color: var(--acсent-text-color); 
+}
 .contact-nav {
   display: flex;
   margin-left: auto;
@@ -390,6 +394,8 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
   width: 100%;
   height: 100%;
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-link-team:hover,
 .icon-link-team:focus {
@@ -399,6 +405,8 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
   width: 20px;
   height: 20px;
   fill: #afb1b8;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-link-team:hover .icon-team,
 .icon-link-team:focus .icon-team {
@@ -425,6 +433,8 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
   height: 100%;
   border: 1px solid #AFB1B8;
   border-radius: 5%;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link:hover,
 .client-link:focus {
@@ -434,6 +444,8 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
   width: 106px;
   height: 60px;
   fill: #afb1b8;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link:hover .client-icon,
 .client-link:focus .client-icon {
@@ -488,9 +500,13 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
 /* ----------------------------footer -----------------------*/
 .adress {
   color: var(--white-text-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mail-tel {
   color: var(--contact-text-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress:hover,
 .adress:focus,
@@ -551,6 +567,8 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
   height: 100%;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-link-footer:hover,
 .icon-link-footer:focus {
@@ -607,6 +625,8 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
 }
 .examples-link{
   display: block;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .examples-link:hover,
 .examples-link:focus {
@@ -631,6 +651,8 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
   opacity: 0;   /* прячем оверлей - он прозрачный */
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .examples-link:hover .overlay-box::before,
 .examples-link:focus .overlay-box::before{
@@ -652,6 +674,8 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
   line-height: 1.56;
   color: var(--white-text-color);
   opacity: 0;   /* прячем оверлей - он прозрачный */
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .examples-link:hover .overlay-text,
 .examples-link:focus .overlay-text{
@@ -680,6 +704,9 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
   font-weight: 700;
   line-height: 1.88;
   letter-spacing: 0.06em;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button.primary:hover,
 .button.primary:focus {
@@ -691,6 +718,10 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
   background-color: var(--secondary-background-color);
   line-height: 1.63;
   letter-spacing: 0.03em;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+              color  250ms cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow  250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button.secondary:hover,
 .button.secondary:focus {
