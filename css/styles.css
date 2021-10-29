@@ -193,7 +193,7 @@ header svg {
 }
 .link.current::after {
   position: absolute;
-  /* display: inline-block; */
+  display: inline-block;
   content: '';
   width: 100%;
   height: 4px;
@@ -470,7 +470,7 @@ transform: translate (-50%, -50%) – это % СВОЕЙ ширины (шири
 }
 .backdrop.is-hidden .modal-box{
   /* когда бекдроп спрятан, мы чтото применяем к .modal-box */
-transform: translate(-50%, -50%) scale(0.5);
+transform: translate(-50%, -50%) scale(0.9);
 }
 .modal-box{
   /* это когда модалка показана */
